@@ -44,11 +44,16 @@ class ViewController: UIViewController {
     func draggingView(sender:UIPanGestureRecognizer){
 
       //  self.view.bringSubviewToFront(sender.view!)
+        
+        println(sender.locationInView(self.view) )
 
         let translation = sender.translationInView(self.view)
         
-        let currentX = sender.view!.center.x + translation.x
-        let currentY = sender.view!.center.y + translation.y
+//        let currentX = sender.view!.center.x + translation.x
+//        let currentY = sender.view!.center.y + translation.y
+        
+        let currentX = sender.locationInView(self.view).x + translation.x
+        let currentY = sender.locationInView(self.view).y + translation.y
         
         let center = self.centerView.center
 
@@ -62,27 +67,38 @@ class ViewController: UIViewController {
         println("center X: \(center.x)")
         
         
-        newX = Float(currentX)
-        
-        if currentX > center.x+120.0{
-            newX = Float(center.x+120.0)
-        }
-        else if currentX < center.x-120.0{
-            newX = Float(center.x-120.0)
-        }
-        
-        if currentY < center.y{
+        if currentY <= center.y{
             newY = circleFormula(center, radius: 120.0, x: Float(currentX),isAbove: true)
             //newY = 200.0
 
             
             println("new Y: \(newY)")
             println("new X: \(newX)")
+            
+            println("above")
+
         }
         else if currentY > center.y{
             newY = circleFormula(center, radius: 120, x: Float(currentX),isAbove: false)
+            
+            
+            println("new Y: \(newY)")
+            println("new X: \(newX)")
+            
+            println("below")
         }
         
+        newX = Float(currentX)
+        
+        if currentX > center.x+120.0{
+            newX = Float(center.x+120.0)
+            newY = Float(center.y)
+            
+        }
+        else if currentX < center.x-120.0{
+            newX = Float(center.x-120.0)
+            newY = Float(center.y)
+        }
         
         sender.view!.center = CGPointMake(CGFloat(newX), CGFloat(newY))
  

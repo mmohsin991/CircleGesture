@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CircleGesture/ViewController.swift"
-            timestampString = "445509823.864011"
+            timestampString = "445512379.028488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "draggingView(_:)"
             landmarkType = "5">
          </BreakpointContent>
