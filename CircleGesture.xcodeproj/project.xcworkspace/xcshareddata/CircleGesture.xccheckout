@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A8379020-9770-4B37-80D2-F28CF6DEE75A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CircleGesture</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3317C0A067A6C855AE67E6063E0E77DF1968565A</key>
+		<string>https://github.com/mmohsin991/CircleGesture.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CircleGesture.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3317C0A067A6C855AE67E6063E0E77DF1968565A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mmohsin991/CircleGesture.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3317C0A067A6C855AE67E6063E0E77DF1968565A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3317C0A067A6C855AE67E6063E0E77DF1968565A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CircleGesture</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -6,7 +6,12 @@
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
+// ref: http://www.mathsisfun.com/algebra/circle-equations.html
+
+
 import UIKit
+// for maths functions
+import Darwin
 
 class ViewController: UIViewController {
 
@@ -37,11 +42,91 @@ class ViewController: UIViewController {
 
     
     func draggingView(sender:UIPanGestureRecognizer){
-        self.view.bringSubviewToFront(sender.view!)
-        var translation = sender.translationInView(self.view)
-        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x, sender.view!.center.y + translation.y)
+
+      //  self.view.bringSubviewToFront(sender.view!)
+
+        let translation = sender.translationInView(self.view)
+        
+        let currentX = sender.view!.center.x + translation.x
+        let currentY = sender.view!.center.y + translation.y
+        
+        let center = self.centerView.center
+
+        var newX = Float()
+        var newY = Float()
+        
+        println("current Y: \(currentY)")
+        println("current X: \(currentX)")
+        
+        println("center Y: \(center.y)")
+        println("center X: \(center.x)")
+        
+        
+        newX = Float(currentX)
+        
+        if currentX > center.x+120.0{
+            newX = Float(center.x+120.0)
+        }
+        else if currentX < center.x-120.0{
+            newX = Float(center.x-120.0)
+        }
+        
+        if currentY < center.y{
+            newY = circleFormula(center, radius: 120.0, x: Float(currentX),isAbove: true)
+            //newY = 200.0
+
+            
+            println("new Y: \(newY)")
+            println("new X: \(newX)")
+        }
+        else if currentY > center.y{
+            newY = circleFormula(center, radius: 120, x: Float(currentX),isAbove: false)
+        }
+        
+        
+        sender.view!.center = CGPointMake(CGFloat(newX), CGFloat(newY))
+ 
+        
+//        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x, sender.view!.center.y + translation.y)
         sender.setTranslation(CGPointZero, inView: self.view)
+        
+
     }
 
+    
+    
+    func circleFormula(center: CGPoint, radius: Float, x: Float, isAbove : Bool) -> Float{
+        
+        let temp = x - Float(center.x)
+        let temp1 = (radius * radius ) - (temp * temp)
+        let temp2 = abs(temp1)
+        
+        if isAbove{
+            let newY = Float(center.y)-sqrt(temp2)
+            return newY
+        }
+        else{
+            let newY = Float(center.y)+sqrt(temp2)
+            return newY
+        }
+        
+    }
+    
+//    
+//    func circleFormula(center: CGPoint, radius: Float, x: Float, isAbove : Bool) -> Float{
+//        
+//        let temp = x - Float(center.x)
+//        let temp1 = (radius * radius ) - (temp * temp)
+//        
+//        if isAbove{
+//            let newY = Float(center.y)-sqrt(temp1)
+//            return newY
+//        }
+//        else{
+//            let newY = Float(center.y)+sqrt(temp1)
+//            return newY
+//        }
+//        
+//    }
 }
 
